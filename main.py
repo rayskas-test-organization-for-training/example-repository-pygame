@@ -134,6 +134,11 @@ class Peli():
         while True:
             self.tutki_tapahtumat()
             if self.valikko:
+                self.pisteet = 0
+                self.robotti.x = 0
+                self.oikealle = False
+                self.vasemmalle = False
+                self.kolikko.arvo = False
                 self.piirra_valikko()
             if self.peli:
                 self.piirra_pelin_naytto()
@@ -279,8 +284,6 @@ class Peli():
                    and r_arvot[0] >= h_arvot[0])
         korkeus = r_arvot[1]+self.robo.get_height() >= h_arvot[1]
         if (leveys1 and korkeus) or (leveys2 and korkeus):
-            self.pisteet = 0
-            self.robotti.x = 0
             self.valikko = True
             self.peli = False
 
